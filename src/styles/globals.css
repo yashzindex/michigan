@@ -67,3 +67,15 @@
     -ms-border-radius: 20px;
     -o-border-radius: 20px;
 }
+
+.custom_slider .slick-slide div {
+    margin: 0 2px;
+}
+
+.custom_slider .slick-slider {
+    margin: 0 -16px 0 -12px;
+}
+
+.custom_slider .slick-list {
+    padding: 0 15% 0 0 !important;
+}

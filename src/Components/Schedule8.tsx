@@ -14,9 +14,11 @@ const Schedule8: React.FC<Schedule8Props> = ({ nextStep, previousStep }) => {
     dots: false,
     infinite: true,
     speed: 500,
-    slidesToShow: 6,
+    slidesToShow: 5,
     slidesToScroll: 3,
     arrows: false,
+    centerMode: true,
+    centerPadding: "15px",
   };
   const dates = [
     { day: "Tue", date: 26 },
@@ -31,16 +33,16 @@ const Schedule8: React.FC<Schedule8Props> = ({ nextStep, previousStep }) => {
       <div className="relative py-5">
         <div className="container">
           <Header previousStep={previousStep} />
-          {/* <div className="w-full bg-[#EBF6FA] rounded-full h-2.5 mt-4">
+          <div className="w-full bg-[#EBF6FA] rounded-full h-2.5 mt-4">
             <div
               className="bg-orange h-2.5 rounded-full"
               style={{ width: "45%" }}
             ></div>
-          </div> */}
+          </div>
           <h1 className="text-blue text-2xl font-semibold sm:text-center mt-6">
-            What sleep issues are you currently experiencing?
+            Schedule your initial 55 min appointment
           </h1>
-          <div className="rounded-[20px] border-[3px] border-[#EFEFEF] p-4 mt-6">
+          <div className="custom_slider rounded-[20px] border-[3px] border-[#EFEFEF] p-4 mt-6">
             <p className="text-blue text-[22px] font-normal mb-5">
               Tue, March 26
             </p>
@@ -48,7 +50,7 @@ const Schedule8: React.FC<Schedule8Props> = ({ nextStep, previousStep }) => {
               {dates.map(({ day, date }) => (
                 <div
                   key={`${day}-${date}`}
-                  className="w-fit max-w-[60px] ml-2 flex flex-col rounded-[10px] border-[3px] border-[#D6D8DE] p-[10px]"
+                  className="w-fit max-w-[60px] flex flex-col rounded-[10px] border-[2px] border-[#D6D8DE] p-[10px] duration-500 hover:bg-orange hover:text-white"
                 >
                   <p className="text-[15px] font-normal">{day}</p>
                   <h6 className="text-2xl font-bold">{date}</h6>
@@ -58,7 +60,7 @@ const Schedule8: React.FC<Schedule8Props> = ({ nextStep, previousStep }) => {
                       alt="user"
                       width={14}
                       height={14}
-                      className="mr-1"
+                      className="mr-1 hover:fill-white hover:text-white"
                     />
                     2
                   </p>

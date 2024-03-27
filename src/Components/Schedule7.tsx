@@ -14,12 +14,12 @@ const Schedule7: React.FC<Schedule7Props> = ({ nextStep, previousStep }) => {
       <div className="relative py-5">
         <div className="container">
           <Header previousStep={previousStep} />
-          {/* <div className="w-full bg-[#EBF6FA] rounded-full h-2.5 mt-4">
+          <div className="w-full bg-[#EBF6FA] rounded-full h-2.5 mt-4">
             <div
               className="bg-orange h-2.5 rounded-full"
               style={{ width: "45%" }}
             ></div>
-          </div> */}
+          </div>
           <h1 className="w-fit text-start sm:mx-auto text-blue text-2xl font-semibold mt-7">
             Who’s your health insurance provider?
           </h1>
