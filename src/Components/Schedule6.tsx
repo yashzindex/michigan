@@ -1,6 +1,8 @@
 import React from "react";
 import Image from "next/image";
 import rightarrow from "../../public/img/rightarrow.svg";
+import Header from "@/Components/Header";
+
 interface Schedule6Props {
   nextStep: () => void;
   previousStep: () => void;
@@ -37,30 +39,8 @@ const Schedule6: React.FC<Schedule6Props> = ({ nextStep, previousStep }) => {
     <>
       <div className="relative py-5">
         <div className="container">
-          <div className="relative">
-            <div className="mx-auto w-fit max-w-[192px]">
-              <Image
-                src="/img/logo.png"
-                alt="avs"
-                width={192}
-                height={74}
-                className="object-cover"
-              />
-            </div>
-            <div className="absolute top-[17px] left-0">
-              <div
-                className="bg-sky h-10 w-10 rounded-full flex items-center justify-center"
-                onClick={previousStep}
-              >
-                <Image
-                  src="/img/leftarrow.png"
-                  alt="arrow"
-                  width={18}
-                  height={12}
-                />
-              </div>
-            </div>
-          </div>
+          <Header previousStep={previousStep} />
+
           <h1 className="text-start sm:text-center text-blue text-2xl font-semibold mt-7">
             Our clinicians can help you:
           </h1>

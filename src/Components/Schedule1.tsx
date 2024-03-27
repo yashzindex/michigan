@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 interface Schedule1Props {
   nextStep: () => void;
 }
@@ -30,7 +31,7 @@ const Schedule1: React.FC<Schedule1Props> = ({ nextStep }) => {
           </h1>
           <p className="text-start md:text-center text-[#5E616C] text-2xl font-normal leading-normal mt-[54px]">
             Book a telehealth appointment with a sleep clinician &nbsp;
-            <span className="text-[#5E616C] text-2xl font-medium leading-normal underline">
+            <span className="text-[#5E616C] text-2xl font-medium leading-normal underline hover:text-blue duration-500">
               covered by your insurance
             </span>
           </p>
@@ -43,7 +44,11 @@ const Schedule1: React.FC<Schedule1Props> = ({ nextStep }) => {
             </button>
           </div>
           <p className="text-center text-blue text-xl font-medium mt-7">
-            or call (734) 584-0133 to <br /> book an appointment
+            or call
+            <span className="hover:underline duration-500 mx-1">
+              (734) 584-0133
+            </span>
+            to <br /> book an appointment
           </p>
           <p className="text-center text-slate text-lg font-normal mt-[47px]">
             We accept most insurance plans
@@ -61,9 +66,11 @@ const Schedule1: React.FC<Schedule1Props> = ({ nextStep }) => {
               </div>
             ))}
           </div>
-          <p className="text-center text-slate text-lg font-normal mt-6">
-            + more
-          </p>
+          <Link href="/">
+            <p className="text-center text-slate text-lg font-normal mt-6 hover:text-blue hover:underline duration-500">
+              + more
+            </p>
+          </Link>
         </div>
       </div>
     </>

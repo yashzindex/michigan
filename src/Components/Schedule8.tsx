@@ -3,6 +3,8 @@ import Image from "next/image";
 import greaterthen from "../../public/img/greaterthen.svg";
 import user from "../../public/img/user.svg";
 import Slider from "react-slick";
+import Header from "@/Components/Header";
+
 interface Schedule8Props {
   nextStep: () => void;
   previousStep: () => void;
@@ -28,36 +30,13 @@ const Schedule8: React.FC<Schedule8Props> = ({ nextStep, previousStep }) => {
     <>
       <div className="relative py-5">
         <div className="container">
-          <div className="relative">
-            <div className="mx-auto w-fit max-w-[192px]">
-              <Image
-                src="/img/logo.png"
-                alt="avs"
-                width={192}
-                height={74}
-                className="object-cover"
-              />
-            </div>
-            <div className="absolute top-[17px] left-0">
-              <div
-                className="bg-sky h-10 w-10 rounded-full flex items-center justify-center"
-                onClick={previousStep}
-              >
-                <Image
-                  src="/img/leftarrow.png"
-                  alt="arrow"
-                  width={18}
-                  height={12}
-                />
-              </div>
-            </div>
-          </div>
-          <div className="w-full bg-[#EBF6FA] rounded-full h-2.5 mt-4">
+          <Header previousStep={previousStep} />
+          {/* <div className="w-full bg-[#EBF6FA] rounded-full h-2.5 mt-4">
             <div
               className="bg-orange h-2.5 rounded-full"
               style={{ width: "45%" }}
             ></div>
-          </div>
+          </div> */}
           <h1 className="text-blue text-2xl font-semibold sm:text-center mt-6">
             What sleep issues are you currently experiencing?
           </h1>
@@ -80,7 +59,7 @@ const Schedule8: React.FC<Schedule8Props> = ({ nextStep, previousStep }) => {
                       width={14}
                       height={14}
                       className="mr-1"
-                    />{" "}
+                    />
                     2
                   </p>
                 </div>

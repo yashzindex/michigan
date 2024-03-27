@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Image from "next/image";
+import Header from "@/Components/Header";
 interface Schedule3Props {
   nextStep: () => void;
   previousStep: () => void;
@@ -40,34 +41,12 @@ const Schedule3: React.FC<Schedule3Props> = ({ nextStep, previousStep }) => {
     <>
       <div className="relative py-5">
         <div className="container">
-          <div className="relative">
-            <div className="mx-auto w-fit max-w-[192px]">
-              <Image
-                src="/img/logo.png"
-                alt="avs"
-                width={192}
-                height={74}
-                className="object-cover"
-              />
-            </div>
-            <div className="absolute top-[17px] left-0">
-              <div
-                className="bg-sky h-10 w-10 rounded-full flex items-center justify-center"
-                onClick={previousStep}
-              >
-                <Image
-                  src="/img/leftarrow.png"
-                  alt="arrow"
-                  width={18}
-                  height={12}
-                />
-              </div>
-            </div>
-          </div>
+          <Header previousStep={previousStep} />
+
           <div className="w-full bg-[#EBF6FA] rounded-full h-2.5 mt-4">
             <div
               className="bg-orange h-2.5 rounded-full"
-              style={{ width: "45%" }}
+              style={{ width: "15%" }}
             ></div>
           </div>
           <h1 className="text-center text-blue text-[25px] font-semibold mt-6">

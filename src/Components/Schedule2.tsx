@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import Header from "@/Components/Header";
 interface Person {
   id: number;
   name: string;
@@ -20,30 +21,7 @@ const Schedule2: React.FC<Schedule2Props> = ({ nextStep, previousStep }) => {
     <>
       <div className="relative py-5">
         <div className="container">
-          <div className="relative">
-            <div className="mx-auto w-fit max-w-[192px]">
-              <Image
-                src="/img/logo.png"
-                alt="avs"
-                width={192}
-                height={74}
-                className="object-cover"
-              />
-            </div>
-            <div className="absolute top-[17px] bottom-auto left-0">
-              <div
-                className="bg-sky h-10 w-10 rounded-full flex items-center justify-center"
-                onClick={previousStep}
-              >
-                <Image
-                  src="/img/leftarrow.png"
-                  alt="arrow"
-                  width={18}
-                  height={12}
-                />
-              </div>
-            </div>
-          </div>
+          <Header previousStep={previousStep} />
           <h1 className="text-blue text-3xl font-semibold text-center mt-6">
             Our sleep clinicians specialize in CBT-I*
           </h1>
@@ -60,7 +38,7 @@ const Schedule2: React.FC<Schedule2Props> = ({ nextStep, previousStep }) => {
                       className="object-cover rounded-full"
                     />
                   </div>
-                  <h4 className="text-slate text-[15px] font-normal">
+                  <h4 className="text-slate text-[15px] font-normal text-center">
                     {person.name} <br />
                     {person.role}
                   </h4>
@@ -68,10 +46,10 @@ const Schedule2: React.FC<Schedule2Props> = ({ nextStep, previousStep }) => {
               ))}
             </div>
           </div>
-          <p className="text-center underline underline-blue text-blue text-lg font-normal mt-6">
+          <p className="text-center underline underline-blue text-slate hover:text-blue hover:underline text-lg font-normal mt-6">
             + more
           </p>
-          <p className="text-start md:text-center text-[#5E616C] text-2xl font-normal leading-normal mt-[41px]">
+          <p className="text-start sm:text-center text-[#5E616C] text-2xl font-normal leading-normal mt-[41px]">
             Answer a few questions to see if CBT-I can be effective for your
             condition
           </p>

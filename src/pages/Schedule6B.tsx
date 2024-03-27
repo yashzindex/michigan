@@ -1,6 +1,7 @@
 import React from "react";
-import Image from "next/image";
-import Schedule1 from "../Components/Schedule1";
+import Header from "@/Components/Header";
+import Link from "next/link";
+
 interface Schedule6BProps {
   previousStep: () => void;
   goToStep: () => void;
@@ -10,30 +11,7 @@ const Schedule6B: React.FC<Schedule6BProps> = ({ previousStep, goToStep }) => {
     <>
       <div className="relative py-5">
         <div className="container">
-          <div className="relative">
-            <div className="mx-auto w-fit max-w-[192px]">
-              <Image
-                src="/img/logo.png"
-                alt="avs"
-                width={192}
-                height={74}
-                className="object-cover"
-              />
-            </div>
-            <div className="absolute top-[17px] left-0">
-              <div
-                className="bg-sky h-10 w-10 rounded-full flex items-center justify-center"
-                onClick={previousStep}
-              >
-                <Image
-                  src="/img/leftarrow.png"
-                  alt="arrow"
-                  width={18}
-                  height={12}
-                />
-              </div>
-            </div>
-          </div>
+          <Header previousStep={previousStep} />
           <div className="text-blue text-center text-[25px] font-semibold mt-[70px]">
             Unfortunately, we’re unable to help you at this time
           </div>
@@ -47,12 +25,11 @@ const Schedule6B: React.FC<Schedule6BProps> = ({ previousStep, goToStep }) => {
             options.
           </p>
           <div className="mt-10 text-center">
-            <button
-              className="mx-auto flex justify-center items-center rounded-[20px] bg-orange hover:opacity-[0.7] duration-500 text-white text-[22px] font-bold leading-normal py-4 text-center w-full max-w-[328px] mt-10"
-              onClick={goToStep}
-            >
-              BACK TO HOMEPAGE
-            </button>
+            <Link href="/">
+              <button className="mx-auto flex justify-center items-center rounded-[20px] bg-orange hover:opacity-[0.7] duration-500 text-white text-[22px] font-bold leading-normal py-4 text-center w-full max-w-[328px] mt-10">
+                BACK TO HOMEPAGE
+              </button>
+            </Link>
           </div>
         </div>
       </div>
