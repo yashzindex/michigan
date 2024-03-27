@@ -1,26 +1,3 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-
-@layer utilities {
-    .container {
-        @apply sm:w-[740px]
-    }
-
-    .text-balance {
-        text-wrap: balance;
-    }
-}
-
-.rsw_3G {
-    position: unset !important;
-}
-
-.rsw_1z {
-    animation-duration: 0s !important;
-}
-
 .form-check {
     position: relative;
 }

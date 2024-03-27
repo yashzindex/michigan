@@ -6,7 +6,11 @@ interface Person {
   role: string;
   imagePath: string;
 }
-const Schedule2 = () => {
+interface Schedule2Props {
+  nextStep: () => void;
+  previousStep: () => void;
+}
+const Schedule2: React.FC<Schedule2Props> = ({ nextStep, previousStep }) => {
   const fakeData: Person[] = [
     { id: 1, name: "Deidre Conroy, ", role: "PhD", imagePath: "/img/s21.png" },
     { id: 2, name: "Arthur Smith,", role: "LCSW", imagePath: "/img/s22.png" },
@@ -16,7 +20,7 @@ const Schedule2 = () => {
     <>
       <div className="relative py-5">
         <div className="container">
-          <div className="relative mt-6">
+          <div className="relative">
             <div className="mx-auto w-fit max-w-[192px]">
               <Image
                 src="/img/logo.png"
@@ -27,7 +31,10 @@ const Schedule2 = () => {
               />
             </div>
             <div className="absolute top-[17px] bottom-auto left-0">
-              <div className="bg-sky h-10 w-10 rounded-full flex items-center justify-center">
+              <div
+                className="bg-sky h-10 w-10 rounded-full flex items-center justify-center"
+                onClick={previousStep}
+              >
                 <Image
                   src="/img/leftarrow.png"
                   alt="arrow"
@@ -37,7 +44,7 @@ const Schedule2 = () => {
               </div>
             </div>
           </div>
-          <h1 className="text-blue text-3xl font-semibold text-center">
+          <h1 className="text-blue text-3xl font-semibold text-center mt-6">
             Our sleep clinicians specialize in CBT-I*
           </h1>
           <div className="relative mt-[44px]">
@@ -69,7 +76,10 @@ const Schedule2 = () => {
             condition
           </p>
           <div className="mt-10 text-center">
-            <button className="rounded-[20px] bg-orange hover:opacity-[0.7] duration-500 text-white text-[22px] font-extrabold leading-normal py-4 text-center w-full max-w-[328px]">
+            <button
+              className="rounded-[20px] bg-orange hover:opacity-[0.7] duration-500 text-white text-[22px] font-extrabold leading-normal py-4 text-center w-full max-w-[328px]"
+              onClick={nextStep}
+            >
               NEXT
             </button>
           </div>

@@ -1,12 +1,27 @@
 import React from "react";
 import Image from "next/image";
 import rightarrow from "../../public/img/rightarrow.svg";
-const Schedule5 = () => {
+import Link from "next/link";
+interface Schedule5Props {
+  nextStep: () => void;
+  previousStep: () => void;
+  goToStep: () => void;
+  setCurrentStep: any;
+}
+const Schedule5: React.FC<Schedule5Props> = ({
+  nextStep,
+  previousStep,
+  setCurrentStep,
+}) => {
+  const goToStep = ({ arg }: any) => {
+    setCurrentStep(arg);
+    console.log("arg");
+  };
   return (
     <>
       <div className="relative py-5">
         <div className="container">
-          <div className="relative mt-6">
+          <div className="relative">
             <div className="mx-auto w-fit max-w-[192px]">
               <Image
                 src="/img/logo.png"
@@ -17,7 +32,10 @@ const Schedule5 = () => {
               />
             </div>
             <div className="absolute top-[17px] left-0">
-              <div className="bg-sky h-10 w-10 rounded-full flex items-center justify-center">
+              <div
+                className="bg-sky h-10 w-10 rounded-full flex items-center justify-center"
+                onClick={previousStep}
+              >
                 <Image
                   src="/img/leftarrow.png"
                   alt="arrow"
@@ -27,6 +45,12 @@ const Schedule5 = () => {
               </div>
             </div>
           </div>
+          <div className="w-full bg-[#EBF6FA] rounded-full h-2.5 mt-4">
+            <div
+              className="bg-orange h-2.5 rounded-full"
+              style={{ width: "45%" }}
+            ></div>
+          </div>
           <h1 className="text-blue text-[25px] font-semibold text-center mt-8">
             Medical Disclaimer
           </h1>
@@ -35,7 +59,7 @@ const Schedule5 = () => {
             is <span className="underline capitalize">NOT</span> going to treat
             the following conditions:
           </p>
-          <div className="relative flex flex-col justify-start sm:justify-center mt-6">
+          <div className="relative w-fit flex flex-col sm:mx-auto mt-6">
             <div className="inline-flex mt-2 w-fit text-start">
               <Image src="/img/mines.png" alt="minus" width={37} height={41} />
               <span className="ml-2 text-blue text-2xl font-normal">
@@ -53,7 +77,7 @@ const Schedule5 = () => {
             CBT-I is also <span className="underline capitalize">NOT</span>
             suitable for clients with the following conditions:
           </p>
-          <div className="relative flex flex-col mt-[21px]">
+          <div className="relative w-fit flex flex-col sm:mx-auto mt-[21px]">
             <div className="inline-flex mt-2 w-fit text-start">
               <Image src="/img/cancle.png" alt="minus" width={37} height={41} />
               <span className="ml-2 text-blue text-2xl font-normal">
@@ -68,7 +92,10 @@ const Schedule5 = () => {
             </div>
           </div>
           <div className="mt-10 text-center">
-            <button className="mx-auto flex justify-center items-center rounded-[20px] bg-orange hover:opacity-[0.7] duration-500 text-white text-[22px] font-bold leading-normal py-4 text-center w-full max-w-full">
+            <button
+              className="mx-auto flex justify-center items-center rounded-[20px] bg-orange hover:opacity-[0.7] duration-500 text-white text-[22px] font-bold leading-normal py-4 text-center w-full max-w-[328px]"
+              onClick={nextStep}
+            >
               CONTINUE
               <Image
                 src={rightarrow}
@@ -79,9 +106,11 @@ const Schedule5 = () => {
               />
             </button>
           </div>
-          <p className="text-center mt-[22px] text-lg font-medium text-blue underline">
-            No, I don’t want treatment
-          </p>
+          <Link href="/Schedule6B">
+            <p className="text-center mt-[22px] text-lg font-medium text-blue underline">
+              No, I don’t want treatment
+            </p>
+          </Link>
         </div>
       </div>
     </>

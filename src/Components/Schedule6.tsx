@@ -1,12 +1,43 @@
 import React from "react";
 import Image from "next/image";
 import rightarrow from "../../public/img/rightarrow.svg";
-const Schedule6 = () => {
+interface Schedule6Props {
+  nextStep: () => void;
+  previousStep: () => void;
+}
+const treatmentOptions = [
+  {
+    text: "Fall asleep faster",
+    imageSrc: "/img/right.png",
+    width: 40,
+    height: 40,
+  },
+  {
+    text: "Stay asleep longer",
+    imageSrc: "/img/right.png",
+    width: 40,
+    height: 40,
+  },
+  {
+    text: "Get more deep sleep",
+    imageSrc: "/img/right.png",
+    width: 40,
+    height: 40,
+  },
+  {
+    text: "Sleep well consistently",
+    imageSrc: "/img/right.png",
+    width: 40,
+    height: 40,
+  },
+];
+
+const Schedule6: React.FC<Schedule6Props> = ({ nextStep, previousStep }) => {
   return (
     <>
       <div className="relative py-5">
         <div className="container">
-          <div className="relative mt-6">
+          <div className="relative">
             <div className="mx-auto w-fit max-w-[192px]">
               <Image
                 src="/img/logo.png"
@@ -17,7 +48,10 @@ const Schedule6 = () => {
               />
             </div>
             <div className="absolute top-[17px] left-0">
-              <div className="bg-sky h-10 w-10 rounded-full flex items-center justify-center">
+              <div
+                className="bg-sky h-10 w-10 rounded-full flex items-center justify-center"
+                onClick={previousStep}
+              >
                 <Image
                   src="/img/leftarrow.png"
                   alt="arrow"
@@ -27,52 +61,27 @@ const Schedule6 = () => {
               </div>
             </div>
           </div>
-          <h1 className=" text-blue text-2xl font-semibold mt-7">
+          <h1 className="text-start sm:text-center text-blue text-2xl font-semibold mt-7">
             Our clinicians can help you:
           </h1>
-          <div className="relative flex flex-col mt-[27px]">
-            <p className="text-blue text-2xl font-medium leading-normal inline-flex items-center mb-3">
-              <Image
-                src="/img/right.png"
-                alt="arrow"
-                width={40}
-                height={40}
-                className="mr-1"
-              />
-              Fall asleep faster
-            </p>
-            <p className="text-blue text-2xl font-medium leading-normal inline-flex items-center mb-3">
-              <Image
-                src="/img/right.png"
-                alt="arrow"
-                width={40}
-                height={40}
-                className="mr-1"
-              />
-              Stay asleep longer
-            </p>
-            <p className="text-blue text-2xl font-medium leading-normal inline-flex items-center mb-3">
-              <Image
-                src="/img/right.png"
-                alt="arrow"
-                width={40}
-                height={40}
-                className="mr-1"
-              />
-              Get more deep sleep
-            </p>
-            <p className="text-blue text-2xl font-medium leading-normal inline-flex items-center mb-3">
-              <Image
-                src="/img/right.png"
-                alt="arrow"
-                width={40}
-                height={40}
-                className="mr-1"
-              />
-              Sleep well consistently
-            </p>
+          <div className="relative flex flex-col sm:mx-auto w-fit mt-[27px]">
+            {treatmentOptions.map(({ text, imageSrc, width, height }) => (
+              <p
+                key={text}
+                className="text-blue text-start text-2xl font-medium leading-normal inline-flex w-[300px]  items-center mb-3"
+              >
+                <Image
+                  src={imageSrc}
+                  alt="arrow"
+                  width={width}
+                  height={height}
+                  className="mr-1"
+                />
+                {text}
+              </p>
+            ))}
           </div>
-          <p className="text-slate text-[22px] font-medium mt-8">
+          <p className="text-start sm:text-center text-slate text-[22px] font-medium mt-8">
             Our clinicians specialize in CBT-I, the first-line treatment for
             adult insomnia, endorsed by:
           </p>
@@ -93,7 +102,10 @@ const Schedule6 = () => {
             />
           </div>
           <div className="mt-10 text-center">
-            <button className="mx-auto flex justify-center items-center rounded-[20px] bg-orange hover:opacity-[0.7] duration-500 text-white text-[22px] font-bold leading-normal py-4 text-center w-full max-w-[328px]">
+            <button
+              className="mx-auto flex justify-center items-center rounded-[20px] bg-orange hover:opacity-[0.7] duration-500 text-white text-[22px] font-bold leading-normal py-4 text-center w-full max-w-[328px]"
+              onClick={nextStep}
+            >
               CONTINUE
               <Image
                 src={rightarrow}

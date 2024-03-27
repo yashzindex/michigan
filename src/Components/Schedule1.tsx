@@ -1,7 +1,9 @@
 import React from "react";
 import Image from "next/image";
-
-const Schedule1 = () => {
+interface Schedule1Props {
+  nextStep: () => void;
+}
+const Schedule1: React.FC<Schedule1Props> = ({ nextStep }) => {
   const imagePaths = [
     "/img/i1.png",
     "/img/i2.png",
@@ -23,17 +25,20 @@ const Schedule1 = () => {
               className="object-cover"
             />
           </div>
-          <h1 className="text-center text-blue text-4xl font-semibold leading-normal my-6">
+          <h1 className="text-center text-blue text-4xl font-semibold leading-[40px] my-6">
             Break the insomnia cycle tonight
           </h1>
           <p className="text-start md:text-center text-[#5E616C] text-2xl font-normal leading-normal mt-[54px]">
-            Book a telehealth appointment with a sleep clinician
+            Book a telehealth appointment with a sleep clinician &nbsp;
             <span className="text-[#5E616C] text-2xl font-medium leading-normal underline">
               covered by your insurance
             </span>
           </p>
           <div className="mt-10 text-center">
-            <button className="rounded-[100px] bg-orange hover:opacity-[0.7] duration-500 text-white text-[22px] font-extrabold leading-normal py-4 text-center w-full max-w-[328px]">
+            <button
+              className="rounded-[100px] bg-orange hover:opacity-[0.7] duration-500 text-white text-[22px] font-extrabold leading-normal py-4 text-center w-full max-w-[328px]"
+              onClick={nextStep}
+            >
               BOOK ONLINE
             </button>
           </div>

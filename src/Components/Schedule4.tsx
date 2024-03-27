@@ -1,40 +1,26 @@
 import React, { useState } from "react";
 import Image from "next/image";
-interface Schedule3Props {
+
+interface Schedule4Props {
   nextStep: () => void;
   previousStep: () => void;
 }
-const sleepIssues = [
-  { id: "cantFallAsleep", label: "Can’t fall asleep", name: "cantFallAsleep" },
-  { id: "cantStayAsleep", label: "Can’t stay asleep", name: "cantStayAsleep" },
+const sleepOptions = [
+  { id: "lessThan1Month", label: "Less than 1 month", value: "lessThan1Month" },
+  { id: "1-3months", label: "1 - 3 months", value: "1-3months" },
+  { id: "3-6months", label: "3 - 6 months", value: "3-6months" },
+  { id: "6-12months", label: "6 - 12 months", value: "6-12months" },
   {
-    id: "wakeUpMultipleTimes",
-    label: "Wake up multiple times",
-    name: "wakeUpMultipleTimes",
+    id: "Morethan12months",
+    label: "More than 12 months",
+    value: "Morethan12months",
   },
-  { id: "stressfulDreams", label: "Stressful dreams", name: "stressfulDreams" },
-  { id: "noDeepSleep", label: "No deep sleep", name: "noDeepSleep" },
 ];
+const Schedule4: React.FC<Schedule4Props> = ({ nextStep, previousStep }) => {
+  const [selectedOption, setSelectedOption] = useState("");
 
-const Schedule3: React.FC<Schedule3Props> = ({ nextStep, previousStep }) => {
-  const [selections, setSelections] = useState<{ [key: string]: boolean }>({
-    cantFallAsleep: false,
-    cantStayAsleep: false,
-    wakeUpMultipleTimes: false,
-    stressfulDreams: false,
-    noDeepSleep: false,
-  });
-
-  const handleCheckboxChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const { name, checked } = event.target;
-    setSelections((prevSelections) => ({
-      ...prevSelections,
-      [name]: checked,
-    }));
-  };
-
-  const isAnyCheckboxSelected = () => {
-    return Object.values(selections).some((value) => value);
+  const handleOptionChange = (option: string) => {
+    setSelectedOption(option);
   };
   return (
     <>
@@ -50,7 +36,7 @@ const Schedule3: React.FC<Schedule3Props> = ({ nextStep, previousStep }) => {
                 className="object-cover"
               />
             </div>
-            <div className="absolute top-[17px] left-0">
+            <div className="absolute top-[17px] bottom-auto left-0">
               <div
                 className="bg-sky h-10 w-10 rounded-full flex items-center justify-center"
                 onClick={previousStep}
@@ -71,26 +57,22 @@ const Schedule3: React.FC<Schedule3Props> = ({ nextStep, previousStep }) => {
             ></div>
           </div>
           <h1 className="text-center text-blue text-[25px] font-semibold mt-6">
-            What sleep issues are you currently experiencing?
+            How long have you been experiencing sleep issues?
           </h1>
-          <p className="text-slate text-xl font-normal text-center mt-3">
-            Select all that apply
-          </p>
-          <div className="relative mt-6">
-            {sleepIssues.map((issue) => (
-              <div key={issue.id} className="my-3 relative">
+          <div className="mt-8">
+            {sleepOptions.map((option) => (
+              <div key={option.id} className="my-3 relative">
                 <div className="form-check">
                   <input
                     className="form-check-input"
                     type="checkbox"
-                    value=""
-                    id={issue.id}
-                    name={issue.name}
-                    checked={selections[issue.name]}
-                    onChange={handleCheckboxChange}
+                    id={option.id}
+                    value={option.value}
+                    checked={selectedOption === option.value}
+                    onChange={() => handleOptionChange(option.value)}
                   />
-                  <label className="form-check-label" htmlFor={issue.id}>
-                    {issue.label}
+                  <label className="form-check-label" htmlFor={option.id}>
+                    {option.label}
                   </label>
                 </div>
               </div>
@@ -100,7 +82,7 @@ const Schedule3: React.FC<Schedule3Props> = ({ nextStep, previousStep }) => {
             <button
               className="rounded-[20px] disabled:opacity-[0.3] bg-orange hover:opacity-[0.7] duration-500 text-white text-[22px] font-bold leading-normal py-4 text-center w-full max-w-[328px]"
               onClick={nextStep}
-              disabled={!isAnyCheckboxSelected()}
+              disabled={!selectedOption}
             >
               NEXT
             </button>
@@ -111,4 +93,4 @@ const Schedule3: React.FC<Schedule3Props> = ({ nextStep, previousStep }) => {
   );
 };
 
-export default Schedule3;
+export default Schedule4;
