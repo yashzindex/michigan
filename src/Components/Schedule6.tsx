@@ -48,7 +48,7 @@ const Schedule6: React.FC<Schedule6Props> = ({ nextStep, previousStep }) => {
             {treatmentOptions.map(({ text, imageSrc, width, height }) => (
               <p
                 key={text}
-                className="text-blue text-start text-2xl font-medium leading-normal inline-flex w-[300px]  items-center mb-3"
+                className="text-blue text-start text-2xl font-medium leading-normal inline-flex w-[310px] items-center mb-3"
               >
                 <Image
                   src={imageSrc}

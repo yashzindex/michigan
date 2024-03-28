@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 import rightarrow from "../../public/img/rightarrow.svg";
 import Lock from "../../public/img/Lock.svg";
@@ -10,6 +10,12 @@ interface Schedule7Props {
   previousStep: () => void;
 }
 const Schedule7: React.FC<Schedule7Props> = ({ nextStep, previousStep }) => {
+  const [selectedOption, setSelectedOption] = useState<string>("");
+
+  const handleSelectChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    setSelectedOption(e.target.value);
+  };
+
   return (
     <>
       <div className="relative py-5">
@@ -22,15 +28,33 @@ const Schedule7: React.FC<Schedule7Props> = ({ nextStep, previousStep }) => {
             <label className="text-slate text-lg font-bold text-start  sm:text-center">
               Insurance Provider
             </label>
-            <select className="block appearance-none w-full border border-[#5E616C] text-slate py-3 px-4 pr-8 rounded-lg leading-tight focus:outline-none focus:bg-white focus:border-[#5E616C] mt-2">
-              <option className="text-slate">Michigan Medicare</option>
-              <option className="text-slate">With options</option>
-            </select>
+            <div className="relative">
+              <select
+                className="block relative appearance-none w-full border border-[#5E616C] text-slate py-3 px-4 pr-8 rounded-lg leading-tight focus:outline-none focus:bg-white focus:border-[#5E616C] mt-2"
+                value={selectedOption}
+                onChange={handleSelectChange}
+              >
+                <option className="text-slate" value="Michigan Medicare">
+                  Michigan Medicare
+                </option>
+                <option className="text-slate" value="With options">
+                  With options
+                </option>
+              </select>
+              <Image
+                src="/img/down.png"
+                alt="down"
+                width={30}
+                height={30}
+                className="absolute right-3 top-0 bottom-0 translate-y-[50%]"
+              />
+            </div>
           </div>
           {/* continue button */}
           <div className="mt-10 text-center">
             <button
-              className="mx-auto flex justify-center items-center rounded-[20px] bg-orange hover:opacity-[0.7] duration-500 text-white text-[22px] font-bold leading-normal py-4 text-center w-full max-w-[328px] mt-5"
+              disabled={!selectedOption}
+              className="mx-auto flex justify-center items-center rounded-[20px] disabled:opacity-[0.3] bg-orange hover:opacity-[0.7] duration-500 text-white text-[22px] font-bold leading-normal py-4 text-center w-full max-w-[328px] mt-5"
               onClick={nextStep}
             >
               CONTINUE
@@ -52,8 +76,8 @@ const Schedule7: React.FC<Schedule7Props> = ({ nextStep, previousStep }) => {
           </div>
           <div className="text-center">
             <button
-              className="mx-auto flex justify-center items-center rounded-[20px] bg-orange hover:opacity-[0.7] duration-500 text-white text-lg font-bold leading-normal py-4 text-center w-full max-w-[328px]"
-              onClick={nextStep}
+              disabled={!selectedOption}
+              className="mx-auto flex justify-center items-center rounded-[20px] disabled:opacity-[0.3] bg-orange hover:opacity-[0.7] duration-500 text-white text-lg font-bold leading-normal py-4 text-center w-full max-w-[328px]"
             >
               CONTINUE WITH SELF-PAY
               <Image
@@ -65,7 +89,7 @@ const Schedule7: React.FC<Schedule7Props> = ({ nextStep, previousStep }) => {
               />
             </button>
           </div>
-          <p className="flex justify-center items-center text-slate text-xs mt-48">
+          <p className="flex justify-center items-center text-slate text-xs mt-[130px]">
             <Image
               src={Lock}
               alt="lock"

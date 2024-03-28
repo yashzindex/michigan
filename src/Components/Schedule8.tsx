@@ -1,11 +1,10 @@
 import React from "react";
 import Image from "next/image";
 import greaterthen from "../../public/img/greaterthen.svg";
+import blocked from "../../public/img/blocked.svg";
 import user from "../../public/img/user.svg";
-import disabled from "../../public/img/disabled.png";
 import Slider from "react-slick";
 import Header from "@/Components/Header";
-import Progressbar from "@/Components/Progressbar";
 
 interface Schedule8Props {
   nextStep: () => void;
@@ -60,11 +59,13 @@ const Schedule8: React.FC<Schedule8Props> = ({ nextStep, previousStep }) => {
                   </h6>
                   <p className="flex text-xs font-normal sm:w-fit sm:text-center sm:mx-auto leading-normal">
                     <Image
-                      src={date === 28 ? disabled : user}
+                      src={date === 28 ? blocked : user}
                       alt="user"
                       width={18}
                       height={16}
-                      className="mr-2 hover:fill-white hover:text-white"
+                      className={`${
+                        date === 28 ? "" : "mr-2"
+                      } hover:fill-white hover:text-white`}
                     />
                     {date === 28 ? " " : people}
                   </p>
