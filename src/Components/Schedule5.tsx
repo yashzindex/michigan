@@ -3,11 +3,11 @@ import Image from "next/image";
 import rightarrow from "../../public/img/rightarrow.svg";
 import Link from "next/link";
 import Header from "@/Components/Header";
+import Progressbar from "@/Components/Progressbar";
 
 interface Schedule5Props {
   nextStep: () => void;
   previousStep: () => void;
-  goToStep: () => void;
   setCurrentStep: any;
 }
 const Schedule5: React.FC<Schedule5Props> = ({
@@ -24,12 +24,6 @@ const Schedule5: React.FC<Schedule5Props> = ({
       <div className="relative py-5">
         <div className="container">
           <Header previousStep={previousStep} />
-          <div className="w-full bg-[#EBF6FA] rounded-full h-2.5 mt-4">
-            <div
-              className="bg-orange h-2.5 rounded-full"
-              style={{ width: "45%" }}
-            ></div>
-          </div>
           <h1 className="text-blue text-[25px] font-semibold text-center mt-8">
             Medical Disclaimer
           </h1>

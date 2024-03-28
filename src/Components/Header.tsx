@@ -8,7 +8,7 @@ interface HeaderProps {
 const Header: React.FC<HeaderProps> = ({ previousStep }) => {
   return (
     <div className="relative">
-      <div className="mx-auto w-fit max-w-[192px]">
+      <div className="mx-auto w-fit max-w-[192px] main-logo">
         <Image
           src="/img/logo.png"
           alt="avs"

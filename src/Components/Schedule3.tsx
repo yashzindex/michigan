@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import Header from "@/Components/Header";
+import Progressbar from "@/Components/Progressbar";
+import Link from "next/link";
 interface Schedule3Props {
   nextStep: () => void;
   previousStep: () => void;
@@ -41,14 +43,30 @@ const Schedule3: React.FC<Schedule3Props> = ({ nextStep, previousStep }) => {
     <>
       <div className="relative py-5">
         <div className="container">
-          <Header previousStep={previousStep} />
-          <div className="w-full bg-[#EBF6FA] rounded-full h-2.5 mt-4">
-            <div
-              className="bg-orange h-2.5 rounded-full"
-              style={{ width: "45%" }}
-            ></div>
+          <div className="relative">
+            <div className="mx-auto w-fit max-w-[192px] main-logo">
+              <Image
+                src="/img/logo.png"
+                alt="avs"
+                width={192}
+                height={74}
+                className="object-cover"
+              />
+            </div>
+            <Link href="/Schedule2">
+              <div className="absolute top-[17px] left-0 cursor-pointer">
+                <div className="bg-sky h-10 w-10 rounded-full flex items-center justify-center">
+                  <Image
+                    src="/img/leftarrow.png"
+                    alt="arrow"
+                    width={18}
+                    height={12}
+                  />
+                </div>
+              </div>
+            </Link>
           </div>
-          <h1 className="text-center text-blue text-[25px] font-semibold mt-6">
+          <h1 className="text-center text-blue text-[25px] font-semibold mt-[31px]">
             What sleep issues are you currently experiencing?
           </h1>
           <p className="text-slate text-xl font-normal text-center mt-3">

@@ -3,11 +3,7 @@ import Header from "@/Components/Header";
 import Link from "next/link";
 import Image from "next/image";
 
-interface Schedule6BProps {
-  previousStep: () => void;
-  goToStep: () => void;
-}
-const Schedule6B: React.FC<Schedule6BProps> = ({ previousStep, goToStep }) => {
+const Schedule6B = () => {
   return (
     <>
       <div className="relative py-5">

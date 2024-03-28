@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import Header from "@/Components/Header";
+import Progressbar from "@/Components/Progressbar";
 
 interface Schedule4Props {
   nextStep: () => void;
@@ -28,12 +29,6 @@ const Schedule4: React.FC<Schedule4Props> = ({ nextStep, previousStep }) => {
       <div className="relative py-5">
         <div className="container">
           <Header previousStep={previousStep} />
-          <div className="w-full bg-[#EBF6FA] rounded-full h-2.5 mt-4">
-            <div
-              className="bg-orange h-2.5 rounded-full"
-              style={{ width: "45%" }}
-            ></div>
-          </div>
           <h1 className="text-center text-blue text-[25px] font-semibold mt-6">
             How long have you been experiencing sleep issues?
           </h1>

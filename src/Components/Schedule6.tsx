@@ -2,6 +2,7 @@ import React from "react";
 import Image from "next/image";
 import rightarrow from "../../public/img/rightarrow.svg";
 import Header from "@/Components/Header";
+import Progressbar from "@/Components/Progressbar";
 
 interface Schedule6Props {
   nextStep: () => void;
@@ -40,7 +41,6 @@ const Schedule6: React.FC<Schedule6Props> = ({ nextStep, previousStep }) => {
       <div className="relative py-5">
         <div className="container">
           <Header previousStep={previousStep} />
-
           <h1 className="text-start sm:text-center text-blue text-2xl font-semibold mt-7">
             Our clinicians can help you:
           </h1>

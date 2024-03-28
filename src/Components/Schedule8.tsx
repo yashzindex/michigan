@@ -2,8 +2,10 @@ import React from "react";
 import Image from "next/image";
 import greaterthen from "../../public/img/greaterthen.svg";
 import user from "../../public/img/user.svg";
+import disabled from "../../public/img/disabled.png";
 import Slider from "react-slick";
 import Header from "@/Components/Header";
+import Progressbar from "@/Components/Progressbar";
 
 interface Schedule8Props {
   nextStep: () => void;
@@ -15,30 +17,24 @@ const Schedule8: React.FC<Schedule8Props> = ({ nextStep, previousStep }) => {
     infinite: true,
     speed: 500,
     slidesToShow: 5,
-    slidesToScroll: 3,
+    slidesToScroll: 1,
     arrows: false,
     centerMode: true,
     centerPadding: "15px",
   };
   const dates = [
-    { day: "Tue", date: 26 },
-    { day: "Wen", date: 27 },
-    { day: "Thu", date: 28 },
-    { day: "Fri", date: 29 },
-    { day: "Sat", date: 30 },
-    { day: "Sun", date: 31 },
+    { day: "Tue", date: 26, people: 2 },
+    { day: "Wen", date: 27, people: 1 },
+    { day: "Thu", date: 28, people: 0 },
+    { day: "Fri", date: 29, people: 3 },
+    { day: "Sat", date: 30, people: 1 },
+    { day: "Sun", date: 31, people: 1 },
   ];
   return (
     <>
       <div className="relative py-5">
         <div className="container">
           <Header previousStep={previousStep} />
-          <div className="w-full bg-[#EBF6FA] rounded-full h-2.5 mt-4">
-            <div
-              className="bg-orange h-2.5 rounded-full"
-              style={{ width: "45%" }}
-            ></div>
-          </div>
           <h1 className="text-blue text-2xl font-semibold sm:text-center mt-6">
             Schedule your initial 55 min appointment
           </h1>
@@ -47,22 +43,30 @@ const Schedule8: React.FC<Schedule8Props> = ({ nextStep, previousStep }) => {
               Tue, March 26
             </p>
             <Slider {...settings}>
-              {dates.map(({ day, date }) => (
+              {dates.map(({ day, date, people }) => (
                 <div
                   key={`${day}-${date}`}
-                  className="w-fit max-w-[60px] flex flex-col rounded-[10px] border-[2px] border-[#D6D8DE] p-[10px] duration-500 hover:bg-orange hover:text-white"
+                  className={`w-fit flex flex-col rounded-[10px] border-[2px] border-[#D6D8DE] p-[10px] duration-500 hover:bg-orange hover:text-white ${
+                    date === 28
+                      ? "border-[2px] border-[#EFEFEF] text-[#EFEFEF]"
+                      : ""
+                  }`}
                 >
-                  <p className="text-[15px] font-normal">{day}</p>
-                  <h6 className="text-2xl font-bold">{date}</h6>
-                  <p className="inline-flex text-xs font-normal">
+                  <p className="text-[15px] font-normal sm:text-center leading-normal">
+                    {day}
+                  </p>
+                  <h6 className="text-2xl font-bold sm:text-center leading-normal">
+                    {date}
+                  </h6>
+                  <p className="flex text-xs font-normal sm:w-fit sm:text-center sm:mx-auto leading-normal">
                     <Image
-                      src={user}
+                      src={date === 28 ? disabled : user}
                       alt="user"
-                      width={14}
-                      height={14}
-                      className="mr-1 hover:fill-white hover:text-white"
+                      width={18}
+                      height={16}
+                      className="mr-2 hover:fill-white hover:text-white"
                     />
-                    2
+                    {date === 28 ? " " : people}
                   </p>
                 </div>
               ))}
@@ -102,6 +106,7 @@ const Schedule8: React.FC<Schedule8Props> = ({ nextStep, previousStep }) => {
                     alt="greaterthen"
                     height={16}
                     width={16}
+                    className="cursor-pointer"
                   />
                 </div>
               </div>
@@ -200,10 +205,7 @@ const Schedule8: React.FC<Schedule8Props> = ({ nextStep, previousStep }) => {
                 </div>
               </div>
               <div className="mt-10 text-center">
-                <button
-                  className="rounded-[20px] bg-orange hover:opacity-[0.7] duration-500 text-white text-[22px] font-bold leading-normal py-4 text-center w-full max-w-[328px]"
-                  onClick={nextStep}
-                >
+                <button className="rounded-[20px] bg-orange hover:opacity-[0.7] duration-500 text-white text-[22px] font-bold leading-normal py-4 text-center w-full max-w-[328px]">
                   CONFIRM DATE & TIME
                 </button>
               </div>
