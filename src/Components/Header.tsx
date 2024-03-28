@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-
+import leftarrow from "../../public/img/leftarrow.svg";
 interface HeaderProps {
   previousStep: () => void;
 }
@@ -22,7 +22,7 @@ const Header: React.FC<HeaderProps> = ({ previousStep }) => {
         onClick={previousStep}
       >
         <div className="bg-sky h-10 w-10 rounded-full flex items-center justify-center">
-          <Image src="/img/leftarrow.png" alt="arrow" width={18} height={12} />
+          <Image src={leftarrow} alt="arrow" width={18} height={12} />
         </div>
       </div>
     </div>

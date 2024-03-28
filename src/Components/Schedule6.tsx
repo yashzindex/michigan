@@ -1,6 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import rightarrow from "../../public/img/rightarrow.svg";
+import check from "../../public/img/check.svg";
 import Header from "@/Components/Header";
 import Progressbar from "@/Components/Progressbar";
 
@@ -12,26 +13,26 @@ const treatmentOptions = [
   {
     text: "Fall asleep faster",
     imageSrc: "/img/right.png",
-    width: 40,
-    height: 40,
+    width: 33,
+    height: 33,
   },
   {
     text: "Stay asleep longer",
     imageSrc: "/img/right.png",
-    width: 40,
-    height: 40,
+    width: 33,
+    height: 33,
   },
   {
     text: "Get more deep sleep",
     imageSrc: "/img/right.png",
-    width: 40,
-    height: 40,
+    width: 33,
+    height: 33,
   },
   {
     text: "Sleep well consistently",
     imageSrc: "/img/right.png",
-    width: 40,
-    height: 40,
+    width: 33,
+    height: 33,
   },
 ];
 
@@ -51,11 +52,11 @@ const Schedule6: React.FC<Schedule6Props> = ({ nextStep, previousStep }) => {
                 className="text-blue text-start text-2xl font-medium leading-normal inline-flex w-[310px] items-center mb-3"
               >
                 <Image
-                  src={imageSrc}
+                  src={check}
                   alt="arrow"
                   width={width}
                   height={height}
-                  className="mr-1"
+                  className="mr-2"
                 />
                 {text}
               </p>
@@ -83,7 +84,7 @@ const Schedule6: React.FC<Schedule6Props> = ({ nextStep, previousStep }) => {
           </div>
           <div className="mt-10 text-center">
             <button
-              className="mx-auto flex justify-center items-center rounded-[20px] bg-orange hover:opacity-[0.7] duration-500 text-white text-[22px] font-bold leading-normal py-4 text-center w-full max-w-[328px]"
+              className="mx-auto flex justify-center items-center rounded-[20px] bg-orange hover:opacity-[0.7] duration-500 text-white text-[22px] font-bold leading-normal py-[22px] text-center w-full max-w-[328px]"
               onClick={nextStep}
             >
               CONTINUE

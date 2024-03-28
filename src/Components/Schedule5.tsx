@@ -1,6 +1,8 @@
 import React from "react";
 import Image from "next/image";
 import rightarrow from "../../public/img/rightarrow.svg";
+import minus from "../../public/img/minus.svg";
+import cross from "../../public/img/cross.svg";
 import Link from "next/link";
 import Header from "@/Components/Header";
 import Progressbar from "@/Components/Progressbar";
@@ -34,13 +36,13 @@ const Schedule5: React.FC<Schedule5Props> = ({
           </p>
           <div className="relative w-fit flex flex-col sm:mx-auto mt-6">
             <div className="inline-flex mt-2 w-fit text-start">
-              <Image src="/img/mines.png" alt="minus" width={37} height={41} />
+              <Image src={minus} alt="minus" width={30} height={30} />
               <span className="ml-2 text-blue text-2xl font-normal">
                 Sleep apnea
               </span>
             </div>
             <div className="inline-flex mt-2 w-fit text-start">
-              <Image src="/img/mines.png" alt="minus" width={37} height={41} />
+              <Image src={minus} alt="minus" width={30} height={30} />
               <span className="ml-2 text-blue text-2xl font-normal">
                 Restless leg syndrome
               </span>
@@ -52,13 +54,13 @@ const Schedule5: React.FC<Schedule5Props> = ({
           </p>
           <div className="relative w-fit flex flex-col sm:mx-auto mt-[21px]">
             <div className="inline-flex mt-2 w-fit text-start">
-              <Image src="/img/cancle.png" alt="minus" width={37} height={41} />
+              <Image src={cross} alt="minus" width={30} height={30} />
               <span className="ml-2 text-blue text-2xl font-normal">
                 Bipolar disorder
               </span>
             </div>
             <div className="inline-flex mt-2 w-fit text-start">
-              <Image src="/img/cancle.png" alt="minus" width={37} height={41} />
+              <Image src={cross} alt="minus" width={30} height={30} />
               <span className="ml-2 text-blue text-2xl font-normal">
                 Substance use abuse
               </span>

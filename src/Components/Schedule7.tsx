@@ -30,7 +30,7 @@ const Schedule7: React.FC<Schedule7Props> = ({ nextStep, previousStep }) => {
             </label>
             <div className="relative">
               <select
-                className="block relative appearance-none w-full border border-[#5E616C] text-slate py-3 px-4 pr-8 rounded-lg leading-tight focus:outline-none focus:bg-white focus:border-[#5E616C] mt-2"
+                className="block relative appearance-none w-full border border-[#5E616C] text-slate py-5 px-4 pr-8 rounded-lg leading-tight focus:outline-none focus:bg-white focus:border-[#5E616C] mt-2"
                 value={selectedOption}
                 onChange={handleSelectChange}
               >
@@ -46,7 +46,7 @@ const Schedule7: React.FC<Schedule7Props> = ({ nextStep, previousStep }) => {
                 alt="down"
                 width={30}
                 height={30}
-                className="absolute right-3 top-0 bottom-0 translate-y-[50%]"
+                className="absolute right-3 top-[50%]  translate-y-[-50%]"
               />
             </div>
           </div>
@@ -54,7 +54,7 @@ const Schedule7: React.FC<Schedule7Props> = ({ nextStep, previousStep }) => {
           <div className="mt-10 text-center">
             <button
               disabled={!selectedOption}
-              className="mx-auto flex justify-center items-center rounded-[20px] disabled:opacity-[0.3] bg-orange hover:opacity-[0.7] duration-500 text-white text-[22px] font-bold leading-normal py-4 text-center w-full max-w-[328px] mt-5"
+              className="mx-auto flex justify-center items-center rounded-[20px] disabled:opacity-[0.3] bg-orange hover:opacity-[0.7] duration-500 text-white text-[22px] font-bold leading-normal py-[22px] text-center w-full max-w-[328px] mt-5"
               onClick={nextStep}
             >
               CONTINUE
@@ -77,7 +77,7 @@ const Schedule7: React.FC<Schedule7Props> = ({ nextStep, previousStep }) => {
           <div className="text-center">
             <button
               disabled={!selectedOption}
-              className="mx-auto flex justify-center items-center rounded-[20px] disabled:opacity-[0.3] bg-orange hover:opacity-[0.7] duration-500 text-white text-lg font-bold leading-normal py-4 text-center w-full max-w-[328px]"
+              className="mx-auto flex justify-center items-center rounded-[20px] disabled:opacity-[0.3] bg-orange hover:opacity-[0.7] duration-500 text-white text-lg font-bold leading-normal py-[22px] text-center w-full max-w-[328px]"
             >
               CONTINUE WITH SELF-PAY
               <Image
@@ -93,7 +93,7 @@ const Schedule7: React.FC<Schedule7Props> = ({ nextStep, previousStep }) => {
             <Image
               src={Lock}
               alt="lock"
-              width={24}
+              width={20}
               height={24}
               className="mr-1"
             />

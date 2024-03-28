@@ -53,7 +53,7 @@ const Schedule4: React.FC<Schedule4Props> = ({ nextStep, previousStep }) => {
           </div>
           <div className="mt-10 text-center">
             <button
-              className="rounded-[20px] disabled:opacity-[0.3] bg-orange hover:opacity-[0.7] duration-500 text-white text-[22px] font-bold leading-normal py-4 text-center w-full max-w-[328px]"
+              className="rounded-[20px] disabled:opacity-[0.3] bg-orange hover:opacity-[0.7] duration-500 text-white text-[22px] font-bold leading-normal py-[22px] text-center w-full max-w-[328px]"
               onClick={nextStep}
               disabled={!selectedOption}
             >

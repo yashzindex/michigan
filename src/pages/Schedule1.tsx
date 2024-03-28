@@ -36,15 +36,15 @@ const Schedule1 = () => {
           <h1 className="text-center text-blue text-4xl font-semibold leading-[40px] mt-[-24px] mb-6">
             Break the insomnia cycle tonight
           </h1>
-          <p className="text-start md:text-center text-[#5E616C] text-2xl font-normal leading-normal mt-[54px]">
+          <p className="text-start md:text-center text-[#5E616C] text-2xl font-normal leading-[28px] mt-[54px]">
             Book a telehealth appointment with a sleep clinician &nbsp;
-            <span className="text-[#5E616C] text-2xl font-medium leading-normal underline hover:text-blue duration-500">
+            <span className="text-[#5E616C] text-2xl font-medium leading-[28px] underline hover:text-blue duration-500">
               covered by your insurance
             </span>
           </p>
           <div className="mt-12 text-center">
             <Link href="/Schedule2">
-              <button className="rounded-[100px] bg-orange hover:opacity-[0.7] duration-500 text-white text-[22px] font-extrabold leading-normal py-4 text-center w-full max-w-[328px]">
+              <button className="rounded-[100px] bg-orange hover:opacity-[0.7] duration-500 text-white text-[22px] font-bold leading-normal py-[22px] text-center w-full max-w-[328px]">
                 BOOK ONLINE
               </button>
             </Link>

@@ -69,7 +69,7 @@ const Schedule3: React.FC<Schedule3Props> = ({ nextStep, previousStep }) => {
           <h1 className="text-center text-blue text-[25px] font-semibold mt-[31px]">
             What sleep issues are you currently experiencing?
           </h1>
-          <p className="text-slate text-xl font-normal text-center mt-3">
+          <p className="text-slate text-xl font-normal italic text-center mt-3">
             Select all that apply
           </p>
           <div className="relative mt-6">
@@ -94,7 +94,7 @@ const Schedule3: React.FC<Schedule3Props> = ({ nextStep, previousStep }) => {
           </div>
           <div className="mt-10 text-center">
             <button
-              className="rounded-[20px] disabled:opacity-[0.3] bg-orange hover:opacity-[0.7] duration-500 text-white text-[22px] font-bold leading-normal py-4 text-center w-full max-w-[328px]"
+              className="rounded-[20px] disabled:opacity-[0.3] bg-orange hover:opacity-[0.7] duration-500 text-white text-[22px] font-bold leading-normal py-[22px] text-center w-full max-w-[328px]"
               onClick={nextStep}
               disabled={!isAnyCheckboxSelected()}
             >

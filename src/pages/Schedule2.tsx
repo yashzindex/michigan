@@ -104,13 +104,13 @@ const Schedule2 = () => {
           >
             {showAllClinicians ? "- less" : "+ more"}
           </p>
-          <p className="text-start sm:text-center text-[#5E616C] text-2xl font-normal leading-normal mt-[41px]">
+          <p className="text-start sm:text-center text-[#5E616C] text-2xl font-normal leading-[28px] mt-[41px]">
             Answer a few questions to see if CBT-I can be effective for your
             condition
           </p>
           <Link href="/Main" className="duration-500">
             <div className="mt-10 text-center">
-              <button className="rounded-[20px] bg-orange hover:opacity-[0.7] duration-500 text-white text-[22px] font-extrabold leading-normal py-4 text-center w-full max-w-[328px]">
+              <button className="rounded-[20px] bg-orange hover:opacity-[0.7] duration-500 text-white text-[22px] font-extrabold leading-normal py-[22px] text-center w-full max-w-[328px]">
                 NEXT
               </button>
             </div>

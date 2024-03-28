@@ -34,18 +34,18 @@ const Schedule8: React.FC<Schedule8Props> = ({ nextStep, previousStep }) => {
       <div className="relative py-5">
         <div className="container">
           <Header previousStep={previousStep} />
-          <h1 className="text-blue text-2xl font-semibold sm:text-center mt-6">
+          <h1 className="text-blue text-2xl font-semibold sm:text-center mt-[-14px]">
             Schedule your initial 55 min appointment
           </h1>
-          <div className="custom_slider rounded-[20px] border-[3px] border-[#EFEFEF] p-4 mt-6">
-            <p className="text-blue text-[22px] font-normal mb-5">
+          <div className="custom_slider rounded-[20px] border-[3px] border-[#EFEFEF] p-4 mt-[31px]">
+            <p className="text-blue text-[22px] font-normal mb-[10px] leading-[22px]">
               Tue, March 26
             </p>
             <Slider {...settings}>
               {dates.map(({ day, date, people }) => (
                 <div
                   key={`${day}-${date}`}
-                  className={`w-fit flex flex-col rounded-[10px] border-[2px] border-[#D6D8DE] p-[10px] duration-500 hover:bg-orange hover:text-white ${
+                  className={`w-fit flex flex-col rounded-[10px] border-[2px] border-[#D6D8DE] p-[10px] hover:border-orange duration-500 hover:bg-orange hover:text-white ${
                     date === 28
                       ? "border-[2px] border-[#EFEFEF] text-[#EFEFEF]"
                       : ""
@@ -65,14 +65,14 @@ const Schedule8: React.FC<Schedule8Props> = ({ nextStep, previousStep }) => {
                       height={16}
                       className={`${
                         date === 28 ? "" : "mr-2"
-                      } hover:fill-white hover:text-white`}
+                      } hover:fill-white hover:text-white focus:fill-white focus:text-white`}
                     />
                     {date === 28 ? " " : people}
                   </p>
                 </div>
               ))}
             </Slider>
-            <p className="text-slate text-[15px] font-normal mt-5">
+            <p className="text-slate text-[15px] font-normal mt-[9px]">
               Timezone: America/New_York
             </p>
           </div>
@@ -83,7 +83,7 @@ const Schedule8: React.FC<Schedule8Props> = ({ nextStep, previousStep }) => {
                 alt="labelimg"
                 width={100}
                 height={30}
-                className="object-cover"
+                className="object-cover mb-2"
               />
               <div className="flex flex-row items-center gap-4">
                 <Image
@@ -97,8 +97,8 @@ const Schedule8: React.FC<Schedule8Props> = ({ nextStep, previousStep }) => {
                   <h3 className="text-blue text-[22px] font-normal">
                     Deirdre Conroy
                   </h3>
-                  <p className="text-slate text-lg font-semibold">
-                    PhD Insomnia specialist
+                  <p className="text-slate text-lg font-semibold leading-[24px]">
+                    PhD <br /> Insomnia specialist
                   </p>
                 </div>
                 <div>
@@ -121,7 +121,7 @@ const Schedule8: React.FC<Schedule8Props> = ({ nextStep, previousStep }) => {
                       id="flexCheckDefault"
                     />
                     <label
-                      style={{ fontSize: "18px", padding: "16px" }}
+                      style={{ fontSize: "18px", padding: "12px" }}
                       className="font-normal text-slate form-check-label"
                       htmlFor="flexCheckDefault"
                     >
@@ -136,7 +136,7 @@ const Schedule8: React.FC<Schedule8Props> = ({ nextStep, previousStep }) => {
                       id="flexCheckDefault"
                     />
                     <label
-                      style={{ fontSize: "18px", padding: "16px" }}
+                      style={{ fontSize: "18px", padding: "12px" }}
                       className="font-normal text-slate form-check-label"
                       htmlFor="flexCheckDefault"
                     >
@@ -151,7 +151,7 @@ const Schedule8: React.FC<Schedule8Props> = ({ nextStep, previousStep }) => {
                       id="flexCheckDefault"
                     />
                     <label
-                      style={{ fontSize: "18px", padding: "16px" }}
+                      style={{ fontSize: "18px", padding: "12px" }}
                       className="font-normal text-slate form-check-label"
                       htmlFor="flexCheckDefault"
                     >
@@ -166,7 +166,7 @@ const Schedule8: React.FC<Schedule8Props> = ({ nextStep, previousStep }) => {
                       id="flexCheckDefault"
                     />
                     <label
-                      style={{ fontSize: "18px", padding: "16px" }}
+                      style={{ fontSize: "18px", padding: "12px" }}
                       className="font-normal text-slate form-check-label"
                       htmlFor="flexCheckDefault"
                     >
@@ -181,7 +181,7 @@ const Schedule8: React.FC<Schedule8Props> = ({ nextStep, previousStep }) => {
                       id="flexCheckDefault"
                     />
                     <label
-                      style={{ fontSize: "18px", padding: "16px" }}
+                      style={{ fontSize: "18px", padding: "12px" }}
                       className="font-normal text-slate form-check-label"
                       htmlFor="flexCheckDefault"
                     >
@@ -196,7 +196,7 @@ const Schedule8: React.FC<Schedule8Props> = ({ nextStep, previousStep }) => {
                       id="flexCheckDefault"
                     />
                     <label
-                      style={{ fontSize: "18px", padding: "16px" }}
+                      style={{ fontSize: "18px", padding: "12px" }}
                       className="font-normal text-slate form-check-label"
                       htmlFor="flexCheckDefault"
                     >
