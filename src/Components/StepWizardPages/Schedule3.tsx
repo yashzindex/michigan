@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Image from "next/image";
-import Header from "@/Components/Header";
-import Progressbar from "@/Components/Progressbar";
+import Header from "@/Components/Shared/Header";
+import Progressbar from "@/Components/Shared/Progressbar";
 import Link from "next/link";
 interface Schedule3Props {
   nextStep: () => void;
@@ -44,15 +44,17 @@ const Schedule3: React.FC<Schedule3Props> = ({ nextStep, previousStep }) => {
       <div className="relative py-5">
         <div className="container">
           <div className="relative">
-            <div className="mx-auto w-fit max-w-[192px] main-logo">
-              <Image
-                src="/img/logo.png"
-                alt="avs"
-                width={192}
-                height={74}
-                className="object-cover"
-              />
-            </div>
+            <Link href="/">
+              <div className="mx-auto w-fit max-w-[192px] main-logo">
+                <Image
+                  src="/img/logo.png"
+                  alt="avs"
+                  width={192}
+                  height={74}
+                  className="object-cover"
+                />
+              </div>
+            </Link>
             <Link href="/Schedule2">
               <div className="absolute top-[17px] left-0 cursor-pointer">
                 <div className="bg-sky h-10 w-10 rounded-full flex items-center justify-center">

@@ -1,9 +1,8 @@
 import React from "react";
 import Image from "next/image";
-import rightarrow from "../../public/img/rightarrow.svg";
-import check from "../../public/img/check.svg";
-import Header from "@/Components/Header";
-import Progressbar from "@/Components/Progressbar";
+import check from "../../../public/img/check.svg";
+import Header from "@/Components/Shared/Header";
+import Continue from "@/Components/Buttons/Continue";
 
 interface Schedule6Props {
   nextStep: () => void;
@@ -83,19 +82,7 @@ const Schedule6: React.FC<Schedule6Props> = ({ nextStep, previousStep }) => {
             />
           </div>
           <div className="mt-10 text-center">
-            <button
-              className="mx-auto flex justify-center items-center rounded-[20px] bg-orange hover:opacity-[0.7] duration-500 text-white text-[22px] font-bold leading-normal py-[22px] text-center w-full max-w-[328px]"
-              onClick={nextStep}
-            >
-              CONTINUE
-              <Image
-                src={rightarrow}
-                alt="rightarrow"
-                width={37}
-                height={41}
-                className="ml-2"
-              />
-            </button>
+            <Continue onClick={nextStep} />
           </div>
         </div>
       </div>

@@ -1,11 +1,11 @@
 import React from "react";
 import Image from "next/image";
-import rightarrow from "../../public/img/rightarrow.svg";
-import minus from "../../public/img/minus.svg";
-import cross from "../../public/img/cross.svg";
+import minus from "../../../public/img/minus.svg";
+import cross from "../../../public/img/cross.svg";
 import Link from "next/link";
-import Header from "@/Components/Header";
-import Progressbar from "@/Components/Progressbar";
+import Header from "@/Components/Shared/Header";
+import Progressbar from "@/Components/Shared/Progressbar";
+import Continue from "@/Components/Buttons/Continue";
 
 interface Schedule5Props {
   nextStep: () => void;
@@ -17,10 +17,6 @@ const Schedule5: React.FC<Schedule5Props> = ({
   previousStep,
   setCurrentStep,
 }) => {
-  const goToStep = ({ arg }: any) => {
-    setCurrentStep(arg);
-    console.log("arg");
-  };
   return (
     <>
       <div className="relative py-5">
@@ -67,22 +63,10 @@ const Schedule5: React.FC<Schedule5Props> = ({
             </div>
           </div>
           <div className="mt-10 text-center">
-            <button
-              className="mx-auto flex justify-center items-center rounded-[20px] bg-orange hover:opacity-[0.7] duration-500 text-white text-[22px] font-bold leading-normal py-4 text-center w-full max-w-[328px]"
-              onClick={nextStep}
-            >
-              CONTINUE
-              <Image
-                src={rightarrow}
-                alt="rightarrow"
-                width={37}
-                height={41}
-                className="ml-2"
-              />
-            </button>
+            <Continue onClick={nextStep} />
           </div>
           <Link href="/Schedule6B">
-            <p className="text-center mt-[22px] text-lg font-medium text-blue underline">
+            <p className="text-center mt-[22px] text-lg font-medium text-blue underline hover:opacity-[0.7]">
               No, I don’t want treatment
             </p>
           </Link>

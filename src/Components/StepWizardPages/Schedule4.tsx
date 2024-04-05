@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Image from "next/image";
-import Header from "@/Components/Header";
-import Progressbar from "@/Components/Progressbar";
+import Header from "@/Components/Shared/Header";
+import Progressbar from "@/Components/Shared/Progressbar";
 
 interface Schedule4Props {
   nextStep: () => void;

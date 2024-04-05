@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 const Schedule1 = () => {
@@ -20,25 +20,28 @@ const Schedule1 = () => {
   const toggleImages = () => {
     setShowAllImages(!showAllImages);
   };
+
   return (
     <>
       <div className="relative py-5">
         <div className="container">
-          <div className="mx-auto w-fit max-w-[192px] main-logo">
-            <Image
-              src="/img/logo.png"
-              alt="avs"
-              width={192}
-              height={74}
-              className="object-cover"
-            />
-          </div>
+          <Link href="/">
+            <div className="mx-auto w-fit max-w-[192px] main-logo cursor-pointer">
+              <Image
+                src="/img/logo.png"
+                alt="avs"
+                width={192}
+                height={74}
+                className="object-cover"
+              />
+            </div>
+          </Link>
           <h1 className="text-center text-blue text-4xl font-semibold leading-[40px] mt-[-24px] mb-6">
             Break the insomnia cycle tonight
           </h1>
           <p className="text-start md:text-center text-[#5E616C] text-2xl font-normal leading-[28px] mt-[54px]">
             Book a telehealth appointment with a sleep clinician &nbsp;
-            <span className="text-[#5E616C] text-2xl font-medium leading-[28px] underline hover:text-blue duration-500">
+            <span className="text-[#5E616C] text-2xl font-medium leading-[28px] underline hover:text-blue duration-500 cursor-pointer">
               covered by your insurance
             </span>
           </p>
@@ -51,7 +54,7 @@ const Schedule1 = () => {
           </div>
           <p className="text-center text-blue text-xl font-medium mt-7">
             or call
-            <span className="hover:underline duration-500 mx-1">
+            <span className="hover:underline duration-500 mx-1 cursor-pointer">
               (734) 584-0133
             </span>
             to <br /> book an appointment

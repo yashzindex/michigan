@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import Image from "next/image";
-import rightarrow from "../../public/img/rightarrow.svg";
-import Lock from "../../public/img/Lock.svg";
-import Header from "@/Components/Header";
-import Progressbar from "@/Components/Progressbar";
+import Lock from "../../../public/img/Lock.svg";
+import down from "../../../public/img/down.svg";
+import Header from "@/Components/Shared/Header";
+import Continue from "@/Components/Buttons/Continue";
+import SelfPay from "@/Components/Buttons/SelfPay";
 
 interface Schedule7Props {
   nextStep: () => void;
@@ -42,30 +43,17 @@ const Schedule7: React.FC<Schedule7Props> = ({ nextStep, previousStep }) => {
                 </option>
               </select>
               <Image
-                src="/img/down.png"
+                src="/img/down.svg"
                 alt="down"
-                width={30}
-                height={30}
-                className="absolute right-3 top-[50%]  translate-y-[-50%]"
+                width={20}
+                height={20}
+                className="absolute right-4 top-[50%] translate-y-[-50%]"
               />
             </div>
           </div>
           {/* continue button */}
           <div className="mt-10 text-center">
-            <button
-              disabled={!selectedOption}
-              className="mx-auto flex justify-center items-center rounded-[20px] disabled:opacity-[0.3] bg-orange hover:opacity-[0.7] duration-500 text-white text-[22px] font-bold leading-normal py-[22px] text-center w-full max-w-[328px] mt-5"
-              onClick={nextStep}
-            >
-              CONTINUE
-              <Image
-                src={rightarrow}
-                alt="rightarrow"
-                width={37}
-                height={41}
-                className="ml-2"
-              />
-            </button>
+            <Continue disabled={!selectedOption} onClick={nextStep} />
           </div>
           <div className="flex items-center my-7">
             <hr className="flex-grow h-[3px] bg-[#5e616c7f] mr-4" />
@@ -75,19 +63,7 @@ const Schedule7: React.FC<Schedule7Props> = ({ nextStep, previousStep }) => {
             <hr className="flex-grow h-[3px] bg-[#5e616c7f] ml-4" />
           </div>
           <div className="text-center">
-            <button
-              disabled={!selectedOption}
-              className="mx-auto flex justify-center items-center rounded-[20px] disabled:opacity-[0.3] bg-orange hover:opacity-[0.7] duration-500 text-white text-lg font-bold leading-normal py-[22px] text-center w-full max-w-[328px]"
-            >
-              CONTINUE WITH SELF-PAY
-              <Image
-                src={rightarrow}
-                alt="rightarrow"
-                width={30}
-                height={30}
-                className="ml-2"
-              />
-            </button>
+            <SelfPay />
           </div>
           <p className="flex justify-center items-center text-slate text-xs mt-[130px]">
             <Image
